@@ -12,61 +12,56 @@ namespace UnitTestProject1
         {
             numeros = new NumerosArabicosParaRomanos();
         }
+        [TestMethod]
+        [DataRow(1, "I")]
+        [DataRow(2, "II")]
+        [DataRow(3, "III")]
+        [DataRow(4, "IV")]
+        [DataRow(5, "V")]
+        [DataRow(6, "VI")]
+        [DataRow(7, "VII")]
+        [DataRow(8, "VIII")]
+        [DataRow(9, "IX")]
+        [DataRow(10, "X")]
+        [DataRow(20, "XX")]
+        [DataRow(30, "XXX")]
+        [DataRow(40, "XL")]
+        [DataRow(50, "L")]
+        [DataRow(60, "LX")]
+        [DataRow(70, "LXX")]
+        [DataRow(80, "LXXX")]
+        [DataRow(90, "XC")]
+        [DataRow(99, "XCIX")]
+
+
+        public void DeveRetornar_1a99(int numero, string romano)
+        {
+            Assert.AreEqual(romano, numeros.Converter(numero));
+        }
 
         [TestMethod]
-        public void DeveRetornar_I()
+        [DataRow(100, "C")]
+        [DataRow(200, "CC")]
+        [DataRow(300, "CCC")]
+        [DataRow(400, "CD")]
+        [DataRow(500, "D")]
+        [DataRow(600, "DC")]
+        [DataRow(700, "DCC")]
+        [DataRow(800, "DCCC")]
+        [DataRow(900, "CM")]
+        [DataRow(1000, "M")]
+        [DataRow(2000, "MM")]
+        [DataRow(3000, "MMM")]
+        [DataRow(4000, "ĪV̄")]
+        [DataRow(5000, "V̄")]
+        [DataRow(6000, "V̄Ī")]
+        [DataRow(7000, "V̄ĪĪ")]
+        [DataRow(8000, "V̄ĪĪĪ")]
+        public void DeveRetornar_100a8000(int numero, string romano)
         {
-            Assert.AreEqual("I", numeros.Converter(1));
+            Assert.AreEqual(romano, numeros.Converter(numero));
         }
-        [TestMethod]
-        public void DeveRetornar_V()
-        {
-            Assert.AreEqual("V", numeros.Converter(5));
-        }
-        [TestMethod]
-        public void DeveRetornar_IV()
-        {
-            Assert.AreEqual("IV", numeros.Converter(4));
-        }
-        [TestMethod]
-        public void DeveRetornar_VI()
-        {
-            Assert.AreEqual("VI", numeros.Converter(6));
-        }
-        [TestMethod]
-        public void DeveRetornar_X()
-        {
-            Assert.AreEqual("X", numeros.Converter(10));
-        }
-        [TestMethod]
-        public void DeveRetornar_XV()
-        {
-            Assert.AreEqual("XV", numeros.Converter(15));
-        }
-        [TestMethod]
-        public void DeveRetornar_L()
-        {
-            Assert.AreEqual("L", numeros.Converter(50));
-        }
-        [TestMethod]
-        public void DeveRetornar_C()
-        {
-            Assert.AreEqual("C", numeros.Converter(100));
-        }
-        [TestMethod]
-        public void DeveRetornar_M()
-        {
-            Assert.AreEqual("M", numeros.Converter(1000));
-        }
-        [TestMethod]
-        public void DeveRetornar_MM()
-        {
-            Assert.AreEqual("MM", numeros.Converter(2000));
-        }
-        [TestMethod]
-        public void DeveRetornar_iv()
-        {
-            Assert.AreEqual("ĪV̄", numeros.Converter(4000));
-        }
+
+
     }
 }
