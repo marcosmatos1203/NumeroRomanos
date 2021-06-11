@@ -36,7 +36,7 @@ namespace UnitTestProject1
 
         public void DeveRetornar_1a99(int numero, string romano)
         {
-            Assert.AreEqual(romano, numeros.Converter(numero));
+            Assert.AreEqual(romano, numeros.ConverterArabicoParaRomano(numero));
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace UnitTestProject1
         [DataRow(8000, "V̄ĪĪĪ")]
         public void DeveRetornar_100a8000(int numero, string romano)
         {
-            Assert.AreEqual(romano, numeros.Converter(numero));
+            Assert.AreEqual(romano, numeros.ConverterArabicoParaRomano(numero));
         }
 
 
